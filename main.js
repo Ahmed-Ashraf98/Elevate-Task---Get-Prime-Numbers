@@ -4,15 +4,13 @@
  * @returns: true if number is prime otherwise false
  */
 const isPrime = function (num) {
-  // all natural numbers are divisible by 1 and the number itself. so we will start the count=2
-  let count = 2;
   // prime numbers are divisible by only 1 and the number itself.
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
-      count++;
+      return false; // break the loop and return false if the number can be divided by other numbers [ other than 1 & itself ]
     }
   }
-  return count === 2 ? true : false;
+  return true;
 };
 
 /**
